@@ -8,6 +8,7 @@
     "server": "cd src/server && npm start",
     "client": "cd src/client && vite",
     "build": "cd src/client && vite build",
+    "buildall": "npm install && cd src/server && npm install && npm run seed && cd ../client && npm install && npm run build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "cd src/client && vite preview",
     "start": "cd src/server && node index.js"
