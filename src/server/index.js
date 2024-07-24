@@ -29,6 +29,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/blogs', blogRoutes);
 
+app.use(express.static(__dirname + "/../client/dist"));
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
