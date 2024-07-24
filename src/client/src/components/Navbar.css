@@ -1,0 +1,106 @@
+/* General styles for navbar */
+header {
+    background-color: #fff;
+    padding: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98.2%;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-menu.open {
+    display: flex;
+}
+
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu li {
+    margin: 1rem 0;
+}
+
+.navbar-menu a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-right a {
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media (min-width: 100%) {
+    .navbar-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+    }
+
+    .navbar-menu a {
+        color: #333;
+        padding: 0.5rem 1rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
