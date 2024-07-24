@@ -38,7 +38,7 @@ const SingleProductPage = () => {
 
     localStorage.setItem('cart', JSON.stringify(cartItems));
     setConfirmation('Product added to cart!');
-    setTimeout(() => setConfirmation(''), 2000); // Clear message after 2 seconds
+    setTimeout(() => setConfirmation(''), 2000); 
   };
 
   const handleFavorite = () => {
@@ -47,10 +47,10 @@ const SingleProductPage = () => {
       favoriteProducts.push(product);
       localStorage.setItem('favoriteProducts', JSON.stringify(favoriteProducts));
       setConfirmation('Product added to favorites!');
-      setTimeout(() => setConfirmation(''), 2000); // Clear message after 2 seconds
+      setTimeout(() => setConfirmation(''), 2000); 
     } else {
       setConfirmation('Product is already in favorites!');
-      setTimeout(() => setConfirmation(''), 2000); // Clear message after 2 seconds
+      setTimeout(() => setConfirmation(''), 2000); 
     }
   };
 

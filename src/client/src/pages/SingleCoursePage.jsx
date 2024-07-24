@@ -31,10 +31,10 @@ const SingleCoursePage = () => {
       favoriteCourses.push(course);
       localStorage.setItem('favoriteCourses', JSON.stringify(favoriteCourses));
       setConfirmation('Course added to favorites!');
-      setTimeout(() => setConfirmation(''), 2000); // Clear message after 2 seconds
+      setTimeout(() => setConfirmation(''), 2000); 
     } else {
       setConfirmation('Course is already in favorites!');
-      setTimeout(() => setConfirmation(''), 2000); // Clear message after 2 seconds
+      setTimeout(() => setConfirmation(''), 2000); 
     }
   };
 

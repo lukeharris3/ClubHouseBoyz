@@ -25,7 +25,7 @@ const BlogPage = () => {
       <div className="blogs-grid">
         {blogs.map((blog) => (
           <div key={blog.id} className="blog-card">
-            <Link to={`/blog/${blog.id}`}> {/* Ensure the path matches */}
+            <Link to={`/blog/${blog.id}`}> 
               <img src={blog.image_url} alt={blog.title} className="blog-image" />
               <div className="blog-info">
                 <h2>{blog.title}</h2>
