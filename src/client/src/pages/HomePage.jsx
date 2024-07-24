@@ -27,7 +27,7 @@ const HomePage = () => {
             <p>Stay in the loop for everything happening in Golf!</p>
           </div>
         </Link>
-        <Link to="/about" className="feature-box"> {/* Add About Us link */}
+        <Link to="/about" className="feature-box"> 
           <div className="feature">
             <h3>About Us</h3>
             <p>Learn more about ClubHouseHomie</p>

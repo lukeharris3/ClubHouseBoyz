@@ -24,13 +24,13 @@ body, html {
 .home .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  margin-top: -20rem; /* Raise the text */
+  margin-top: -20rem; 
   color: #ffffff;
 }
 
 .home .hero p {
   font-size: 1.5rem;
-  margin-bottom: 2rem; /* Add margin to the paragraph */
+  margin-bottom: 2rem; 
 }
 
 /* Features Section */
@@ -58,8 +58,8 @@ body, html {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 4px rgb(255, 255, 255);
-  width: 275px; /* Set fixed width */
-  height: 240px; /* Set fixed height */
+  width: 275px; 
+  height: 240px; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,14 +84,14 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  height: 45px; /* Adjust this value to your preference */
+  height: 45px; 
 }
 
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
-  text-decoration: none; /* Remove underline from the link */
+  text-decoration: none; 
 }
 
 header nav ul {
@@ -125,7 +125,7 @@ header nav ul li i {
 
 /* Add padding to avoid navbar overlay */
 .main-content {
-  padding-top: 60px; /* Adjust this value if your navbar height changes */
+  padding-top: 60px; 
 }
 
 /* Remaining styles */
@@ -203,8 +203,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Set a fixed width for course cards */
-  height: 400px; /* Set a fixed height for course cards */
+  width: 300px; 
+  height: 400px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .course-card img {
   max-width: 100%;
-  max-height: 200px; /* Set a max height for course images */
+  max-height: 200px; 
   object-fit: cover;
   margin-bottom: 1rem;
 }
@@ -268,8 +268,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Set a fixed width for product cards */
-  height: 450px; /* Set a fixed height for product cards */
+  width: 300px; 
+  height: 450px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -283,7 +283,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-card img {
   max-width: 100%;
-  max-height: 300px; /* Set a max height for product images */
+  max-height: 300px; 
   object-fit: cover;
   margin-bottom: 1rem;
 }
@@ -449,7 +449,6 @@ a:hover {
   font-weight: bolder;
 }
 
-/* Main content wrapper to fill the remaining space */
 .main-content {
   flex: 1;
   display: flex;
@@ -507,19 +506,19 @@ a:hover {
 .back-button2:hover {
   background-color: #ff0000;
 }
-/* Adjust position of the main content to avoid overlap with the back button */
+
 .single-course-page,
 .single-product-page,
 .products-page,
 .courses-page {
   position: relative;
-  padding-top: 5rem; /* Adjust this value if your navbar height changes */
+  padding-top: 5rem; 
 }
 
 
 /* Blog Page Styles */
 .blog-page {
-  padding: 6rem 2rem 2rem 2rem; /* Add top padding to avoid navbar overlap */
+  padding: 6rem 2rem 2rem 2rem; 
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -575,7 +574,7 @@ a:hover {
 
 /* Single Blog Page Styles */
 .single-blog-page {
-  padding: 6rem 2rem 2rem 2rem; /* Add top padding to avoid navbar overlap */
+  padding: 6rem 2rem 2rem 2rem; 
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -608,20 +607,20 @@ a:hover {
 .cart-page {
   padding: 80px 20px 20px 20px;
   text-align: center;
-  background-color: #f5f5f5; /* Light grey background for contrast */
+  background-color: #f5f5f5; 
 }
 
 .cart-page h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #333; /* Dark grey for headings */
+  color: #333; 
 }
 
 .cart-items {
   list-style: none;
   padding: 0;
-  margin: 0 auto; /* Center the list */
-  max-width: 900px; /* Constrain the width */
+  margin: 0 auto; 
+  max-width: 900px; 
 }
 
 .cart-item {
@@ -630,18 +629,18 @@ a:hover {
   justify-content: space-between;
   margin: 15px 0;
   padding: 15px;
-  background-color: #fff; /* White background for items */
-  border: 1px solid #ddd; /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .cart-item-image {
-  height: 100px; /* Adjusted size for a more compact look */
+  height: 100px; 
   width: 100px;
   margin-right: 20px;
-  object-fit: cover; /* Ensure the image covers the area */
-  border-radius: 10px; /* Match the border radius of the item */
+  object-fit: cover; 
+  border-radius: 10px; 
 }
 
 .cart-item-details {
@@ -654,12 +653,12 @@ a:hover {
 .cart-item-details h2 {
   font-size: 1.5rem;
   margin: 0;
-  color: #333; /* Dark grey for text */
+  color: #333; 
 }
 
 .cart-item-details p {
   margin: 5px 0;
-  color: #777; /* Light grey for descriptions */
+  color: #777; 
 }
 .btn-back-to-products{
   background-color: #000000;
@@ -678,12 +677,12 @@ a:hover {
   font-size: 1.45rem;
   font-weight: bold;
   margin-top: 20px;
-  color: #000000; /* Dark grey for emphasis */
+  color: #000000; 
 }
 
 .empty-cart {
   font-size: 1.5rem;
-  color: #777; /* Light grey for empty state */
+  color: #777; 
   margin-top: 50px;
 }
 .btn-remove { background-color: #000000;
@@ -724,12 +723,12 @@ a:hover {
 }
 
 .instagram-link {
-  color: #000000; /* Change this color as needed */
+  color: #000000; 
   font-weight: bold;
 }
 
 .instagram-link:hover {
-  color: #ff0000; /* Change this hover color as needed */
+  color: #ff0000; 
 }
 /* Auth Pages */
 .auth-container {
@@ -790,7 +789,7 @@ a:hover {
 }
 /* Account Page */
 .account-page {
-  max-width: 800px; /* Increase max-width to fit all information */
+  max-width: 800px; 
   margin: 100px auto;
   padding: 20px;
   background: #fff;
@@ -851,8 +850,8 @@ a:hover {
 }
 
 .favorite-item img {
-  width: 80px; /* Shrink the image */
-  height: 80px; /* Shrink the image */
+  width: 80px; 
+  height: 80px; 
   object-fit: cover;
   border-radius: 5px;
   margin-right: 20px;
