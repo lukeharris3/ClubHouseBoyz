@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd src/server && npm start",
-    "client": "cd src/public && vite",
-    "build": "cd src/public && vite build",
+    "client": "cd src/client && vite",
+    "build": "cd src/client && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "cd src/public && vite preview"
+    "preview": "cd src/client && vite preview"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
