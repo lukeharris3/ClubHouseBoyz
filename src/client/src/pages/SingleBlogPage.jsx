@@ -10,13 +10,12 @@ const SingleBlogPage = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`postgresql://clubhousehomie35_user:hSpbSCfrk2oFMmMZ6As2RKebl36ixoD2@dpg-cqggumiju9rs73ce8uu0-a.oregon-postgres.render.com/clubhousehomie35${id}`);
+        const response = await axios.get(`/api/blogs/${id}`);
         setBlog(response.data);
       } catch (error) {
         console.error('Error fetching blog:', error);
       }
     };
-
     fetchBlog();
   }, [id]);
 
