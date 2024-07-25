@@ -11,7 +11,6 @@ const seedBrands = async () => {
 
     await pool.query(`
       INSERT INTO brands (name) VALUES
-      ON CONFLICT (title) DO NOTHING;
       ('Taylormade'),
       ('Titleist'),
       ('Scotty Cameron'),
@@ -21,6 +20,7 @@ const seedBrands = async () => {
       ('Nike'),
       ('Adidas'),
       ('Bad Birdie');
+      ON CONFLICT (name) DO NOTHING;
     `);
     console.log("Seeded brands Table successfully!");
   } catch (err) {
@@ -41,11 +41,11 @@ const seedUsers = async () => {
     
     await pool.query(`
       INSERT INTO users (username, email, password) VALUES
-      ON CONFLICT (title) DO NOTHING;
       ('user1', 'user1@example.com', 'password1'),
       ('user2', 'user2@example.com', 'password2'),
       ('lukeharris35', 'luke35@mail.com', '2505810'),
       ('ethank', 'ethan@mail.com', '34576');
+      ON CONFLICT (email) DO NOTHING;
     `);
     console.log("Seeded Users Table successfully!");
   } catch (err) {
@@ -75,7 +75,8 @@ const seedBlogs = async () => {
       ('Tiger Woods New Golf Course in Park City, Utah', 'Luke Harris', 'https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2023/2/Marcella%20Golf%20Course%207.5.22-13.jpg.rend.hgtvcom.966.644.suffix/1675872868680.jpeg', 'Golf legend Tiger Woods is embarking on an exciting new venture with the construction of a state-of-the-art golf course in Park City, Utah. This project marks another significant chapter in Woods illustrious career, transitioning from a dominant player to an influential course designer. The new course is set to reflect Woods deep understanding of the game, combining challenging play with breathtaking natural beauty. The Park City course will be nestled in the picturesque landscapes of Utah, offering stunning views and a unique golfing experience. Woods has emphasized creating a course that is both challenging for seasoned golfers and accessible to newcomers, ensuring that players of all skill levels can enjoy the game. The design will incorporate the areas natural terrain, with rolling hills, pristine fairways, and strategically placed bunkers and water features, enhancing both the aesthetic appeal and the strategic elements of play. Woods involvement in the project goes beyond just design his vision is to create a golfing destination that fosters a sense of community and passion for the sport. The course will feature modern facilities, including a clubhouse, practice areas, and amenities designed to enhance the overall experience for golfers and visitors alike. As anticipation builds, golf enthusiasts are eager to see how Tiger Woods expertise and innovative approach will shape this new addition to Park Citys sporting landscape. With construction underway, the future looks bright for this ambitious project, promising a premier golfing destination that honors the legacy of one of the games greatest players.'),
       ('Scottie Schefflers Historic Season Continues', 'Luke Harris', 'https://ca-times.brightspotcdn.com/dims4/default/e8c4423/2147483647/strip/true/crop/4200x2800+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F98%2F4f%2F8ceae0dc4adf8ceb00e6c1c287eb%2Faptopix-players-championship-golf-15635.jpg', 'Scottie Scheffler has been on an extraordinary run this year, becoming the first player since Arnold Palmer in 1962 to win six PGA TOUR events before July. His latest victory at the Travelers Championship solidified his place in golf history, showcasing his consistent dominance throughout the season. Schefflers wins include prestigious tournaments such as the Arnold Palmer Invitational, THE PLAYERS Championship, and the Masters Tournament. This remarkable achievement not only highlights Schefflers talent and determination but also places him among the legends of the sport. Fans and analysts are eagerly watching to see if he can continue this momentum and challenge the modern-era record for single-season wins.'),
       ('Lydia Ko Dominates at Evian Championship', 'Luke Harris', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNAAIvRvbTide6KF875WL-9r-UuLn7we-jAA&s', 'Lydia Ko demonstrated her exceptional talent and poise by winning the Evian Championship, securing her third major title. Kos consistent play and strategic approach throughout the tournament were pivotal in her success. She maintained her composure during the final round, sinking crucial putts and avoiding costly mistakes. This victory solidifies Kos position as one of the top players in womens golf and adds to her impressive career achievements. Fans and analysts are looking forward to seeing how Ko continues to perform in the upcoming majors and the remainder of the season.')
-    `);
+      ON CONFLICT (title) DO NOTHING;
+      `);
     console.log('Seeded blogs Table successfully!');
   } catch (err) {
     console.error('Error seeding blogs table', err);
@@ -99,7 +100,6 @@ const seedProducts = async () => {
 
     await pool.query(`
       INSERT INTO products (brand_id, name, category, price, description, image_url) VALUES
-      ON CONFLICT (title) DO NOTHING;
       (1, 'Qi10 Max Driver', 'Driver', 599.99, 'The higher the inertia the more forgiving the driver. Introducing the Qi10 Max driver, experience TaylorMade speed with the forgiveness of 10K inertia.', 'https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1720498064201/zoom/TC301_zoom_D.jpg?sw=900&sh=900&sm=fit'),
       (1, 'Stealth 2 Driver', 'Driver', 399.99, 'Number 1 Driver in golf. Stealth 2 has 60x Carbon Twist Face to create better energy transfer and faster ball speeds. It is engineered for maximum forgiveness with a carbon reinforced ring.', 'https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1720498064201/zoom/TA105_zoom_D.jpg?sw=900&sh=900&sm=fit'),
       (1, 'P790 Aged Copper Irons', 'Irons', 1499.99, 'This modern classic design celebrates the 1980s TaylorMade logo with an aged copper finish designed to mature over time, creating a unique vintage feel. Its distinctive copper styling, retro logos, and meticulously crafted components blends heritage and modern innovation.', 'https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1720498064201/zoom/TC622_zoom_D.jpg?sw=900&sh=900&sm=fit'),
@@ -140,7 +140,8 @@ const seedProducts = async () => {
       (10, 'USA ROPE HAT', 'Hat', 35.00, 'Imagine making your birdie putt on 18 then going straight to the backyard cookout for the 4th. Now look up. You are wearing this hat.', 'https://badbirdiegolf.com/cdn/shop/files/USAHat1.png?v=1717537072&width=5000'),
       (7, 'MALBON X 100 THIEVES WRANGLER DRIVER COVER', 'Accessories', 75.00, 'The Malbon x 100 Thieves Wrangler Driver Headcover is made of 100% polyester. Features a Camo Print and Orange Interior Lining. A Malbon x 100 Thieves Logo is Embroidered on the Front with a Buckets Logo Embroidered on the Top and finished with a Malbon Script Woven Flag Label Attached at the Back.', 'https://100thieves.com/cdn/shop/files/M-8514-MLT_1.jpg?v=1700518410&width=480'),
       (7, 'MALBON X COCA-COLA BUCKETS BALL MARKER', 'Accessories', 34.00, 'The Coca-Cola | Malbon “Heritage” Collection highlights color stories, logo-marks, and patterns representative of Coca-Colas evolution throughout the 20th century. Its goal - elicit fond memories of rounds shared amongst friends - on the course and around the dinner table. This collection aims to continue Coca-Colas tradition of spreading happiness.', 'https://malbongolf.com/cdn/shop/files/M-8543-BUCKETS_1.jpg?v=1702510516&width=900');
-    `);
+      ON CONFLICT (name) DO NOTHING;
+      `);
 
     console.log("Seeded products Table successfully!");
   } catch (error) {
@@ -164,7 +165,6 @@ const seedGolfCourses = async () => {
     `);
     await pool.query(`
       INSERT INTO courses (name, address, phone, description, price_for_9, price_for_18, image_url) VALUES
-      ON CONFLICT (title) DO NOTHING;
       ('Alpine CC', '5000 West Country Club Lane, Highland, UT 84003', '(801) 322-3971', 'Alpine Country Club is no doubt a golfers club. Our membership and golf staff have a shared passion for the game. We offer an 18 hole championship golf course that is fair, yet will challenge your abilities and delight your golf senses. Admired as one of the top private courses in the state, Alpine is proud to host many local and national events and qualifiers.', 75, 125, 'https://lh3.googleusercontent.com/p/AF1QipNfS0ISDbuT2BXne_zkk-u_v5Ab13cAu9MuB8IG=s1360-w1360-h1020'),
       ('Bear Lake GC', '98 Clubhouse Drive, Garden City, UT 84028', '(435) 946-8742', 'Come out and experience Bear Lake Golf Course. Bear Lake is an exciting 9 hole regulation course located at the Bear Lake Golf Course facility in Garden City, UT. From the longest tees it presents 3,376 yards of golf for a par of 36. The course was designed by William H. Neff, ASGCA and opened in 1971. The course rating is 36.1 with a slope rating of 123. Bear Lake is a daily fee golf course with a ‘Open To Public’ guest policy.', 26, 52, 'https://bearlake.org/wp-content/uploads/bear-lake-golfing.jpg'),
       ('Bear Lake West', '155 HWY 89, Fish Haven, ID 83287', '(208) 945-2744', 'Experience Bear Lake West Golf Course, a beautiful 9-hole course with stunning views of Bear Lake. Perfect for a relaxing round.', 30, 60, 'https://exddilid.cdn.imgeng.in/app/courses/image/preview/88053.jpg'),
@@ -277,6 +277,7 @@ const seedGolfCourses = async () => {
       ('Woodland Hills GC', '655 Clubhouse Dr., Eagle Mountain, UT 84005', '(801) 789-8100', 'Woodland Hills Golf Club offers a beautiful setting with 18 holes of scenic golf. The course features a unique and challenging layout, with water hazards and bunkers strategically placed to test golfers of all skill levels. With well-manicured greens and fairways, Woodland Hills provides a memorable golfing experience.', 30, 60, 'https://summitcreekutah.com/wp-content/uploads/2023/08/IMG_1212-preview-3-1024x768.jpg'),
       ('Augusta National Golf Club', '2604 Washington Rd, Augusta, GA 30904', '(706) 667-6000', 'Augusta National Golf Course, located in Augusta, Georgia, is one of the most iconic and exclusive golf clubs in the world. Established in 1933 by Bobby Jones and Clifford Roberts, it is renowned for hosting the annual Masters Tournament. The course was designed by Jones and Alister MacKenzie, featuring lush, meticulously maintained fairways, undulating greens, and strategically placed hazards. Augusta National is famous for its beauty, highlighted by the flowering azaleas and dogwoods that line the course. Its signature holes, including Amen Corner (holes 11, 12, and 13), are known for their challenging layouts and scenic views, making it a revered site in the golfing world.', 500, 1000, 'https://magnoliagolfdesign.es/wp-content/uploads/elementor/thumbs/Opinions-augusta-pmymzab6h28f40py4dvmac40y4mzmpkk62nqw27qeo.jpg'),
       ('Torrey Pines Golf Course', '11480 N Torrey Pines Rd, La Jolla, CA 92037', '(858) 552-1662', 'Torrey Pines Golf Course, situated in La Jolla, California, offers breathtaking views of the Pacific Ocean and a challenging layout that has hosted numerous prestigious tournaments, including the U.S. Open. Originally designed by William F. Bell and opened in 1957, the course underwent a significant renovation by Rees Jones in 2001 to enhance its difficulty and aesthetics. Torrey Pines is comprised of two 18-hole courses, the North and the South, with the latter being the more renowned for its length and difficulty. The course features wide fairways, deep bunkers, and dramatic coastal cliffs, providing both a beautiful and formidable test for golfers of all levels.', 500, 1000, 'https://lh6.googleusercontent.com/proxy/9j3g4SaEg5F8pO3IMaku3A_7zeGc8D7T8k63OaA0cm872VckzIHXPF0j-2TlSq9Uv4d2t5QhanWbpYyb8t_aJmus4HFXmLlOZQOL5stdb6RVUkF8XGh503p8IMAQZeV_c0Tc2SOwper45J41rfrf3rrla8oDwsSvZTcOiK4D')
+      ON CONFLICT (name) DO NOTHING;
       `);
     
 
