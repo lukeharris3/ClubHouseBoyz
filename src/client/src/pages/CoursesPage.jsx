@@ -10,7 +10,7 @@ const CoursesPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/golfcourses');
+        const response = await axios.get('postgresql://clubhousehomie35_user:hSpbSCfrk2oFMmMZ6As2RKebl36ixoD2@dpg-cqggumiju9rs73ce8uu0-a.oregon-postgres.render.com/clubhousehomie35');
         setCourses(response.data);
         console.log('Fetched courses:', response.data);
       } catch (error) {
