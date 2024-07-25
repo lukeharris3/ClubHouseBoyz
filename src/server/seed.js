@@ -3,14 +3,14 @@ const pool = require('./db');
 const seedBrands = async () => {
   try {
     await pool.query(`
-      CREATE TABLE IF NOT EXISTS Brands (
+      CREATE TABLE IF NOT EXISTS brands (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL
       );
     `);
 
     await pool.query(`
-      INSERT INTO Brands (name) VALUES
+      INSERT INTO brands (name) VALUES
       ('Taylormade'),
       ('Titleist'),
       ('Scotty Cameron'),
@@ -21,16 +21,16 @@ const seedBrands = async () => {
       ('Adidas'),
       ('Bad Birdie');
     `);
-    console.log("Seeded Brands Table successfully!");
+    console.log("Seeded brands Table successfully!");
   } catch (err) {
-    console.error('Error seeding Brands table', err);
+    console.error('Error seeding brands table', err);
   }
 };
 
 const seedUsers = async () => {
   try {
     await pool.query(`
-      CREATE TABLE IF NOT EXISTS Users (
+      CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
         username VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL,
@@ -39,7 +39,7 @@ const seedUsers = async () => {
     `);
     
     await pool.query(`
-      INSERT INTO Users (username, email, password) VALUES
+      INSERT INTO users (username, email, password) VALUES
       ('user1', 'user1@example.com', 'password1'),
       ('user2', 'user2@example.com', 'password2'),
       ('lukeharris35', 'luke35@mail.com', '2505810'),
@@ -54,7 +54,7 @@ const seedUsers = async () => {
 const seedBlogs = async () => {
   try {
     await pool.query(`
-      CREATE TABLE IF NOT EXISTS Blogs (
+      CREATE TABLE IF NOT EXISTS blogs (
         id SERIAL PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         author VARCHAR(255) NOT NULL,
@@ -65,7 +65,7 @@ const seedBlogs = async () => {
     `);
 
     await pool.query(`
-      INSERT INTO Blogs (title, author, image_url, content) VALUES
+      INSERT INTO blogs (title, author, image_url, content) VALUES
       ('Xander Schauffele Claims Victory at The Open', 'Luke Harris', 'https://res.cloudinary.com/pgatour-prod/pgatour/news/betting-profile/genesis-scottish-open---day-four-2161988649.jpg', 'Xander Schauffele Claims Victory at The Open In a breathtaking display of skill and composure, Xander Schauffele triumphed at The Open today, securing his first major championship title. The final round was nothing short of spectacular, with Schauffele showcasing remarkable consistency and resilience under pressure. From the very first tee, his determination was palpable, and his ability to navigate the challenging course with precision set him apart from the competition. Fans and fellow golfers alike were in awe as he sank critical putts and executed flawless shots, proving why he is considered one of the most promising talents in golf. Schauffeles journey to victory was marked by strategic play and a deep understanding of the courses nuances. Throughout the tournament, he demonstrated an impressive mix of power and finesse, adapting his approach to each holes unique challenges. His steady performance was a testament to his rigorous preparation and mental fortitude. As the competition intensified, Schauffele remained unflappable, making crucial birdies in the final holes that ultimately sealed his win. This victory not only highlights his exceptional golfing prowess but also his ability to perform under the most intense circumstances. The win at The Open is a significant milestone in Xander Schauffeles career, heralding a new era for the young golfer. As he hoisted the coveted Claret Jug, the magnitude of his achievement was clear. This triumph solidifies his position among the elite in the sport and promises an exciting future ahead. For fans, todays victory is a moment to celebrate and anticipate even greater performances from Schauffele in the years to come. His success at The Open serves as an inspiration to aspiring golfers worldwide, proving that dedication, skill, and perseverance can lead to greatness on the biggest stages in golf.'),
       ('Bryson DeChambeau Snubbed from U.S. Olympic Team for Paris 2024', 'Luke Harris', 'https://www.japantimes.co.jp/japantimes/uploads/images/2024/06/18/404005.JPG', 'In a surprising and controversial decision, Bryson DeChambeau has been left off the U.S. Olympic golf team for the Paris 2024 games, sparking debate among fans and analysts alike. Known for his unique approach to the game and remarkable power off the tee, DeChambeaus exclusion has left many questioning the selection process. Despite his impressive track record and recent strong performances, the committee opted for other players, leaving DeChambeau out of what could have been his second Olympic appearance. DeChambeaus snub is particularly perplexing given his contributions to the sport and his ability to draw in crowds with his dynamic style of play. Over the past few years, he has consistently proven himself to be one of the top golfers in the world, with multiple PGA Tour victories and a U.S. Open title under his belt. His innovative approach to golf, focusing on physics and biomechanics, has not only revolutionized his own game but has also influenced the sport more broadly. Fans and fellow golfers alike are left wondering why a player of his caliber and influence has been overlooked for one of the most prestigious stages in sports. This decision could have significant implications for the U.S. team and the golfing community at large. Bryson DeChambeaus presence in Paris would have undoubtedly added a layer of excitement and competitive edge to the Olympic golf tournament. His ability to perform under pressure and his relentless drive to push the boundaries of the game make him a formidable competitor. As the golfing world reacts to this unexpected omission, one thing is clear DeChambeaus absence will be keenly felt, and the decision will likely be a topic of discussion and debate leading up to the 2024 Olympics.'),
       ('Tiger Woods and Bryson DeChambeau Miss the Cut at The Open', 'Luke Harris', 'https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2023/GettyImages-2162663327.jpg.rend.hgtvcom.966.690.suffix/1721396972536.jpeg', 'This weekends Open Championship saw two of golfs biggest names, Tiger Woods and Bryson DeChambeau, fail to make the cut, marking a surprising turn of events for fans and followers of the sport. Both players, known for their distinctive styles and significant impacts on the game, struggled to find their rhythm on the challenging course, leading to an early exit from the tournament. Tiger Woods, a legendary figure in golf, faced a tough time navigating the courses difficult conditions. Despite his vast experience and previous successes at The Open, Woods could not overcome the obstacles presented by the demanding layout. His performance fell short of the cut line, leaving fans disappointed but hopeful for his return to form in future events. Bryson DeChambeau, known for his powerful drives and scientific approach to the game, also found himself unable to advance to the weekend rounds. DeChambeaus aggressive playing style, which often pays off with spectacular results, was met with resistance by the courses intricate design and unforgiving elements. Missing the cut was a setback for DeChambeau, who has been a prominent figure in recent tournaments, but it serves as a reminder of the sports unpredictability and the continuous challenges it presents. The absence of Woods and DeChambeau in the later stages of The Open was a significant moment in the championship, underscoring the difficulty of the competition and the high standards required to succeed. Both players will undoubtedly use this experience as motivation to refine their game and come back stronger in upcoming tournaments.'),
@@ -73,16 +73,16 @@ const seedBlogs = async () => {
       ('Scottie Schefflers Historic Season Continues', 'Luke Harris', 'https://ca-times.brightspotcdn.com/dims4/default/e8c4423/2147483647/strip/true/crop/4200x2800+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F98%2F4f%2F8ceae0dc4adf8ceb00e6c1c287eb%2Faptopix-players-championship-golf-15635.jpg', 'Scottie Scheffler has been on an extraordinary run this year, becoming the first player since Arnold Palmer in 1962 to win six PGA TOUR events before July. His latest victory at the Travelers Championship solidified his place in golf history, showcasing his consistent dominance throughout the season. Schefflers wins include prestigious tournaments such as the Arnold Palmer Invitational, THE PLAYERS Championship, and the Masters Tournament. This remarkable achievement not only highlights Schefflers talent and determination but also places him among the legends of the sport. Fans and analysts are eagerly watching to see if he can continue this momentum and challenge the modern-era record for single-season wins.'),
       ('Lydia Ko Dominates at Evian Championship', 'Luke Harris', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNAAIvRvbTide6KF875WL-9r-UuLn7we-jAA&s', 'Lydia Ko demonstrated her exceptional talent and poise by winning the Evian Championship, securing her third major title. Kos consistent play and strategic approach throughout the tournament were pivotal in her success. She maintained her composure during the final round, sinking crucial putts and avoiding costly mistakes. This victory solidifies Kos position as one of the top players in womens golf and adds to her impressive career achievements. Fans and analysts are looking forward to seeing how Ko continues to perform in the upcoming majors and the remainder of the season.')
     `);
-    console.log('Seeded Blogs Table successfully!');
+    console.log('Seeded blogs Table successfully!');
   } catch (err) {
-    console.error('Error seeding Blogs table', err);
+    console.error('Error seeding blogs table', err);
   }
 };
 
 const seedProducts = async () => {
   try {
     await pool.query(`
-      CREATE TABLE IF NOT EXISTS Products (
+      CREATE TABLE IF NOT EXISTS products (
         id SERIAL PRIMARY KEY,
         brand_id INT NOT NULL,
         name VARCHAR(255) NOT NULL,
@@ -95,7 +95,7 @@ const seedProducts = async () => {
     `);
 
     await pool.query(`
-      INSERT INTO Products (brand_id, name, category, price, description, image_url) VALUES
+      INSERT INTO products (brand_id, name, category, price, description, image_url) VALUES
       (1, 'Qi10 Max Driver', 'Driver', 599.99, 'The higher the inertia the more forgiving the driver. Introducing the Qi10 Max driver, experience TaylorMade speed with the forgiveness of 10K inertia.', 'https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1720498064201/zoom/TC301_zoom_D.jpg?sw=900&sh=900&sm=fit'),
       (1, 'Stealth 2 Driver', 'Driver', 399.99, 'Number 1 Driver in golf. Stealth 2 has 60x Carbon Twist Face to create better energy transfer and faster ball speeds. It is engineered for maximum forgiveness with a carbon reinforced ring.', 'https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1720498064201/zoom/TA105_zoom_D.jpg?sw=900&sh=900&sm=fit'),
       (1, 'P790 Aged Copper Irons', 'Irons', 1499.99, 'This modern classic design celebrates the 1980s TaylorMade logo with an aged copper finish designed to mature over time, creating a unique vintage feel. Its distinctive copper styling, retro logos, and meticulously crafted components blends heritage and modern innovation.', 'https://www.taylormadegolf.com/dw/image/v2/AAIS_PRD/on/demandware.static/-/Sites-tmag-master-catalog/en_US/v1720498064201/zoom/TC622_zoom_D.jpg?sw=900&sh=900&sm=fit'),
@@ -138,16 +138,16 @@ const seedProducts = async () => {
       (7, 'MALBON X COCA-COLA BUCKETS BALL MARKER', 'Accessories', 34.00, 'The Coca-Cola | Malbon “Heritage” Collection highlights color stories, logo-marks, and patterns representative of Coca-Colas evolution throughout the 20th century. Its goal - elicit fond memories of rounds shared amongst friends - on the course and around the dinner table. This collection aims to continue Coca-Colas tradition of spreading happiness.', 'https://malbongolf.com/cdn/shop/files/M-8543-BUCKETS_1.jpg?v=1702510516&width=900');
     `);
 
-    console.log("Seeded Products Table successfully!");
+    console.log("Seeded products Table successfully!");
   } catch (error) {
-    console.error("Error seeding Products Table:", error);
+    console.error("Error seeding products Table:", error);
   }
 };
 
 const seedGolfCourses = async () => {
   try {
     await pool.query(`
-      CREATE TABLE IF NOT EXISTS GolfCourses (
+      CREATE TABLE IF NOT EXISTS courses (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         address VARCHAR(255) NOT NULL,
@@ -159,7 +159,7 @@ const seedGolfCourses = async () => {
       );
     `);
     await pool.query(`
-      INSERT INTO GolfCourses (name, address, phone, description, price_for_9, price_for_18, image_url) VALUES
+      INSERT INTO courses (name, address, phone, description, price_for_9, price_for_18, image_url) VALUES
       ('Alpine CC', '5000 West Country Club Lane, Highland, UT 84003', '(801) 322-3971', 'Alpine Country Club is no doubt a golfers club. Our membership and golf staff have a shared passion for the game. We offer an 18 hole championship golf course that is fair, yet will challenge your abilities and delight your golf senses. Admired as one of the top private courses in the state, Alpine is proud to host many local and national events and qualifiers.', 75, 125, 'https://lh3.googleusercontent.com/p/AF1QipNfS0ISDbuT2BXne_zkk-u_v5Ab13cAu9MuB8IG=s1360-w1360-h1020'),
       ('Bear Lake GC', '98 Clubhouse Drive, Garden City, UT 84028', '(435) 946-8742', 'Come out and experience Bear Lake Golf Course. Bear Lake is an exciting 9 hole regulation course located at the Bear Lake Golf Course facility in Garden City, UT. From the longest tees it presents 3,376 yards of golf for a par of 36. The course was designed by William H. Neff, ASGCA and opened in 1971. The course rating is 36.1 with a slope rating of 123. Bear Lake is a daily fee golf course with a ‘Open To Public’ guest policy.', 26, 52, 'https://bearlake.org/wp-content/uploads/bear-lake-golfing.jpg'),
       ('Bear Lake West', '155 HWY 89, Fish Haven, ID 83287', '(208) 945-2744', 'Experience Bear Lake West Golf Course, a beautiful 9-hole course with stunning views of Bear Lake. Perfect for a relaxing round.', 30, 60, 'https://exddilid.cdn.imgeng.in/app/courses/image/preview/88053.jpg'),
@@ -275,9 +275,9 @@ const seedGolfCourses = async () => {
       `);
     
 
-    console.log("Seeded GolfCourses Table successfully!");
+    console.log("Seeded courses Table successfully!");
   } catch (error) {
-    console.error("Error seeding GolfCourses Table:", error);
+    console.error("Error seeding courses Table:", error);
   }
 };
 
